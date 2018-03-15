@@ -43,8 +43,13 @@ function parseArgs() {
 
 function displayHelpAndExit(message) {
   if (message) { console.log(message); }
-  console.log("usage: X [options] <ktbs-url>");
-  console.log("SOON HERE A BETTER HELP MESSAGE");  //TODO
+  console.log("usage: electron main.js [options] <ktbs-url>");
+  console.log("options:");
+  console.log(" -u/--username <username> : if your kTBS requires authentication");
+  console.log(" -p/--password <password> : if your kTBS requires authentication");
+  console.log(" -r/--route    <route>    : to jump directly to a specific view");
+  console.log(" -D/--debug               : open developer tools in all windows");
+  console.log(" -h/--help                : displays this help message");
   app.exit(message && 1 || 0);
 }
 
