@@ -1,0 +1,28 @@
+{
+  "name": "ktbs4la-electron",
+  "description": "Standalone version of kTBS4LA",
+  "main": "main.js",
+  "authors": [
+    "Pierre-Antoine Champin <pchampin@liris.cnrs.fr>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "ktbs",
+    "taaabs",
+    "\"Learning",
+    "Analytics\"",
+    "traces"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ktbs4la": "git://github.com/liris-tweak/KTBS4LA.git",
+    "shadycss": "webcomponents/shadycss#^v1.0.0"
+  }
+}

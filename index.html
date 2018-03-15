@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>kTBS4LA</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script>
+    window.Polymer = window.Polymer || {};
+    window.Polymer.dom = 'shadow';
+  </script>
+  <link rel="import" href="bower_components/polymer/polymer.html">
+  <link rel="import" href="bower_components/ktbs-for-la/ktbs-for-la.html">
+
+  <!-- Moar css -->
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+</body>
+<script>
+  document.body.addEventListener("keydown", (evt) => {
+      console.log(evt);
+      if (evt.altKey) {
+        let handler = {
+          'ArrowLeft': () => { history.back(); },
+          'ArrowRight': () => { history.forward(); },
+        }[evt.code];
+        if (handler) { handler(); }
+      }
+  });
+  require('electron').ipcRenderer.on('ktbs', (event, message) => {
+     let k4l = document.createElement("ktbs-for-la");
+     k4l.setAttribute("ktbs-url", message);
+     document.body.appendChild(k4l);
+   });
+</script>
+</html>
